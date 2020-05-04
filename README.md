@@ -13,18 +13,35 @@ This plugin was needed because while migrating our databases, we needed to
 migrate the ids of several resources to uuid.
 The transformation *can* be done at the application but we came across an
 issue where different services would need several keys to transform the ids 
-to the new uuids.  This required extra configuration and we wanted to isolate
+to the new uuids. This required extra configuration and we wanted to isolate
 the keys for each service.
 
+## Compatibility matrix
+
+- Resource Transformer v0.0.6.1: Kong v0.14.x
+- Resource Transformer v0.0.7.1: Kong v1.5.x
+
+
 ## Installation
+
+### Install from the Luarocks repository
 
 ``` sh
 $ luarocks install resource-transformer
 ```
+Note: install resource-transformer plugin from the Luarocks repository does not guarantee you with the latest version.
+
+### Install from the git repository
+
+``` sh
+$ git clone https://github.com/dangtrinhnt/kong-plugin-resource-transformer.git
+$ cd kong-plugin-resource-transformer
+$ luarocks make kong-plugin-resource-transformer-0.0.7-1.rockspec
+```
 
 ## Usage
 
-This follows the kong plugin spec so extra references can be found [here](https://getkong.org/docs/0.13.x/plugin-development/).
+This follows the kong plugin spec so extra references can be found [here](https://docs.konghq.com/1.5.x/plugin-development/).
 
 ### Configuration
 
@@ -176,7 +193,11 @@ $ luarocks upload kong-plugin-resource-transformer-X.X.X.rockspec
 
 where `X.X.X` is the new version.
 
-## Authors
+## Maintainers
+
+* Trinh Nguyen - [dangtrinhnt](https://www.dangtrinh.com)
+
+## Original Authors
 
 * Kwang Jin Kim - [crazytruth](https://github.com/crazytruth)
 
